@@ -5,6 +5,7 @@ sudo bash /tmp/installContainerd.sh
 sudo systemctl restart containerd.service
 sudo wget https://raw.githubusercontent.com/lerndevops/labs/master/scripts/installK8S.sh -P /tmp
 sudo bash /tmp/installK8S.sh
+sudo kubeadm init --ignore-preflight-errors=all
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
